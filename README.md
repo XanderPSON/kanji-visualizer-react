@@ -1,21 +1,34 @@
-# react-challenge
-This is my attempt to learn React in 4 days.
+# Kanji Visualizer in React
 
-# Why React?
-I chose React for two main reasons. First was because I wanted more practice with Javascript and front-end development. The second reason was because I wanted to be able to call myself a full-stack devleoper; I already felt comfortable with Rails on the back-end and wanted something to complete my programmer profile. React seemed like a great fit.
+<p> This is a simple kanji visualizer written in React. This tool will help you visualize what Japanese kanji you have already learned and to what degree so you know where you stand in your quest to master all 2200 kanji.</p>
 
-# My React App
-I made three apps. All three apps present a way to visualize all of the kanji (Chinese characters used in Japanese) that you have learned through a color-coding system. Everything is done in React.
+# How It Works
 
-The first app, kanji_react, starts with all 2200 kanji inside of the far left "Haven't studied" div. When you click on a kanji it will move it one div to the right. The progression is from "Don't know well" (red) to "Know extremely well" (blue). As Japanese learners learn a kanji they can move it to a div and visually see the progress they're making.
+<p> For the kanji_connect, click on a kanji to change the color. The colors indicate the degree to which you have memorized the character. The following colors mean:</p>
+<ul>
+<li>White: Not known at all</li>
+<li>Red: Not well known</li>
+<li>Orange: So-so</li>
+<li>Green: Well known</li>
+<li>Blue: Mastered</li>
+</ul>
 
-The second app, kanji_hover, is a giant list of all the 2200 kanji. When you hover your mouse over a button it will change color.
+# To Run
 
-The third app, kanji_connect, is a giant list of all the 2200 kanji. When you click on a kanji it will change color. However, this app also will save data (unlike the other two). For the model and controller I connected React to Rails. On a third project I was able to connect Rails with React and have the objects changed by React be saved to the database.
+Clone the repo in your terminal, then run:
 
-# About the Program
-If you look at the code you will see that I chose to use the JSX syntatic sugar that React is able to employ so that my code looks familiar to HTML. React has a very vertical structure; data is passed down from the top objects to the objects below through properties ("props"). Each React component ("object" in Ruby terms) can also store "state". For my kanji_react app I had a top level object called KanjiSheet that contained each of the 5 study level's React objects as well. Each of these levels was passed an array (through "props") of kanji. The respective level object would then turn that array of strings into an array of React components called "Kanji" (basically buttons), apply styling, and print them to the screen.
+```
+rails s
+```
 
-The second app, kanji_hover, had a function for onMouseOver defined that would change the property of a given kanji button when moused over. This new property changes the color of the button.
+And go to:
 
-The third app, kanji_connect, has an onClick function instead of an onMouseOver function to change the color of the kanji. However, it also calls an ajax put request to save the state of the kanji.
++ [Kanji_React](http://localhost:3000/kanji_react)
++ [Kanji_Hover](http://localhost:3000/kanji_hover)
++ [Kanji_Connect](http://localhost:3000/kanji_connect)
+
+# Resources for learning React
+
++ [Getting Started with React](https://facebook.github.io/react/docs/getting-started.html)
++ [Up and Running with React.js](http://www.lynda.com/React.js-tutorials/Up-Running-React.js/379264-2.html)
++ [React.js - A guide for Rails developers](https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers)
