@@ -8,6 +8,10 @@ class KanjisController < ApplicationController
   def kanji_hover
   end
 
+  def kanji_connect
+    @kanjis = Kanji.all
+  end
+
   # GET /kanjis
   # GET /kanjis.json
   def index
@@ -57,13 +61,6 @@ class KanjisController < ApplicationController
       end
     end
   end
-  # def update
-  #   if @kanji.update(kanji_params)
-  #     render json: @kanji
-  #   else
-  #     render json: @kanji.errors, status: :unprocessable_entity
-  #   end
-  # end
 
   # DELETE /kanjis/1
   # DELETE /kanjis/1.json
