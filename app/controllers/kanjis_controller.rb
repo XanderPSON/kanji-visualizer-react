@@ -2,6 +2,10 @@ class KanjisController < ApplicationController
   before_action :set_kanji, only: [:show, :edit, :update, :destroy]
 
   def kanji_react
+    @kanjis = Kanji.all
+  end
+
+  def kanji_hover
   end
 
   # GET /kanjis
@@ -53,6 +57,13 @@ class KanjisController < ApplicationController
       end
     end
   end
+  # def update
+  #   if @kanji.update(kanji_params)
+  #     render json: @kanji
+  #   else
+  #     render json: @kanji.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /kanjis/1
   # DELETE /kanjis/1.json
@@ -72,6 +83,6 @@ class KanjisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kanji_params
-      params.require(:kanji).permit(:character)
+      params.require(:kanji).permit(:character, :level)
     end
 end
